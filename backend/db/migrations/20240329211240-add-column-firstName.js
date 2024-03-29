@@ -11,10 +11,11 @@ module.exports = {
 		await queryInterface.addColumn("Users", "firstName", {
 			type: Sequelize.STRING(30),
 			allowNull: false,
-		});
+		}, options);
 	},
 
 	async down(queryInterface, Sequelize) {
-		await queryInterface.removeColumn("Users", "firstName");
+		options.tableName = "Users";
+		return queryInterface.removeColumn(options.tableName, "firstName");
 	},
 };
