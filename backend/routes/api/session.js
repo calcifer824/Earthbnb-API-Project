@@ -12,14 +12,6 @@ const router = express.Router();
 
 // Middleware that checks these keys and validates them
 const validateLogin = [
-	// check("firstName")
-	// 	.exists({ checkFalsy: true })
-	// 	.isLength({ min: 1 })
-	// 	.withMessage("Please provide a firstName with at least 1 character."),
-	// check("lastName")
-	// 	.exists({ checkFalsy: true })
-	// 	.isLength({ min: 1 })
-	// 	.withMessage("Please provide a lastName with at least 1 character."),
 	check("credential")
 		.exists({ checkFalsy: true })
 		.notEmpty()
